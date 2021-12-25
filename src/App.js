@@ -1,13 +1,20 @@
 import React from "react";
 import "./App.css";
-import Row from "./Row";
-import requests from "./requests";
+import Row from "./components/Row";
+import Hero from "./components/Hero";
+import requests from "./config/requests";
 
 function App() {
   return (
     <div>
-      <Row title="Netflix Originals" fetchUrl={requests.fetchNetflixOriginals} />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
+
+      <Hero />
+
+      <Row 
+      title="Netflix Originals" 
+      fetchUrl={requests.fetchTrending}
+      isLargeRow
+       />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRated} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
@@ -20,3 +27,4 @@ function App() {
 
 export default App;
 
+ 
