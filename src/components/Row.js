@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React, { useState, useEffect } from "react";
 import axios from "../config/axios";
 import { imgBaseUrl } from "../config/requests";
@@ -19,14 +20,14 @@ function Row({ title, fetchUrl, isLargeRow }) {
 
   return (
     <div className="row">
-      <h2>{title}</h2>
+      <h2 className="row__title">{title}</h2>
 
         <div className="row__posters">
           {movies.map(movie => (
             <img 
             className={`row__poster ${isLargeRow && "row__posterLarge"}`}
             key={movie.id} 
-            src={`${imgBaseUrl}${isLargeRow ? movie.poster_path : movie.backdrop_path}`} 
+            src={`${imgBaseUrl}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
             alt={`${movie.original_title}`} 
             />
             ))};

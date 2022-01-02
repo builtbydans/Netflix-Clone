@@ -2,16 +2,16 @@ import React from "react";
 import "./App.css";
 import Row from "./components/Row";
 import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
 import requests from "./config/requests";
 
 function App() {
   return (
     <div>
-
+      <Navbar />
       <Hero />
-
       <Row 
-      title="Netflix Originals" 
+      title="New This Week" 
       fetchUrl={requests.fetchTrending}
       isLargeRow
        />

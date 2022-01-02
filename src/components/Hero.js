@@ -9,30 +9,31 @@ function Hero() {
     useEffect(() => {
         async function fetchData() {
             const request = await axios.get(requests.fetchTrending);
-            setMovie(request.data.results[0])
-            console.log(request.data.results[0]);
+            setMovie(request.data.results[1])
+            console.log(request.data.results);
             return request;
         }
         fetchData();
     }, []);
 
     return (
-        <header 
-            className="banner"
-            style={{
-                backgroundSize: "contain",
-                backgroundImage: `url(${imgBaseUrl}${movie.backdrop_path})`,
-                backgroundPosition: "center center",
-            }}
-            >
-            <div className="banner__contents">
-                <h1>{movie.original_title}</h1>
+        <header className='banner'>
+            <div className="banner__bg" style={{
+                    backgroundImage: `url(${imgBaseUrl}${movie.backdrop_path})`}}
+                >
 
-                <div className="banner__buttons">
-                    <button className="banner__button"></button>
-                    <button className="banner__button"></button>
+                <div className="banner__contents">
+                    <h1 className="banner__title">{movie?.original_title || movie?.original_name || movie?.title || movie?.name }</h1>
+                    
+                    <p className="banner__description">{movie?.overview}</p>
+
+                    <div className="banner__buttons">
+                        <button className="banner__button">Play</button>
+                        <button className="banner__button">More Info</button>
+                    </div>
                 </div>
-                <p>{movie.overview}</p>
+                <div className="banner--fadeBottom" />
+                
             </div>
         </header>
     );

@@ -1,0 +1,42 @@
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 1;
+  transition-timing-function: ease-in-out;
+  transition: all 0.3s;
+}
+
+.nav__black {
+  background-color: #141414;
+}
+
+.nav__logo {
+  position: fixed;
+  left: 40px;
+  width: 100px;
+  object-fit: contain;
+}
+
+.nav__menu {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin-left: 120px;
+  font-size: 13px;
+}
+
+.nav--firstChild {
+  font-weight: 600;
+}
+
+.nav__avatar {
+  position: fixed;
+  right: 20px;
+  width: 30px;
+  object-fit: contain;
+}
